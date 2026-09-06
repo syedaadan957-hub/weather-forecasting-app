@@ -1,0 +1,88 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>AI Agriculture Dashboard</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+<div class="container">
+    <h1>🌾 AI Agriculture Weather System</h1>
+    <p class="subtitle">Helping Farmers Make Smarter Decisions</p>
+    <div class="menu-card">
+        <div class="card-content">
+            <h2>📍 Location</h2>
+            <p>Current Farm Position</p>
+        </div>
+        <a href="/location/" class="open-btn">Open →</a>
+    </div>
+    <div class="menu-card">
+        <div class="card-content">
+            <h2>🌤 Current Weather</h2>
+            <p>Live Weather Conditions</p>
+        </div>
+        <a href="/current-weather/" class="open-btn">Open →</a>
+    </div>
+    <div class="menu-card">
+        <div class="card-content">
+            <h2>📅 10-Day Forecast</h2>
+            <p>Weather Prediction</p>
+        </div>
+        <a href="/forecast/" class="open-btn">Open →</a>
+    </div>
+    <div class="menu-card">
+        <div class="card-content">
+            <h2>
+                🚨 AI Alerts
+                <span id="alertDot" class="red-dot" style="display:none;"></span>
+            </h2>
+            <p id="alertText">Checking weather alerts...</p>
+        </div>
+        <a href="/alerts/" class="open-btn">Open →</a>
+    </div>
+    <div class="menu-card">
+        <div class="card-content">
+            <h2>🌱 Farming Suggestions</h2>
+            <p>AI Crop Recommendations</p>
+        </div>
+        <a href="/farming/" class="open-btn">Open →</a>
+    </div>
+</div>
+<script>
+function getCookie(name){
+    let cookieValue=null;
+    if(document.cookie && document.cookie!==""){
+        const cookies=document.cookie.split(";");
+        for(let cookie of cookies){
+            cookie=cookie.trim();
+            if(cookie.startsWith(name+"=")){
+                cookieValue=decodeURIComponent(cookie.substring(name.length+1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+</script>
+<div id="popupOverlay" class="popup-overlay">
+    <div class="popup-box">
+        <h2>⚠️ AI Weather Alert</h2>
+        <div id="popupContent"></div>
+        <div class="popup-buttons">
+            <button id="viewAlerts" class="popup-btn">
+                View Full Alerts
+            </button>
+            <button id="popupBtn" class="popup-btn secondary-btn">
+                Dismiss
+            </button>
+        </div>
+    </div>
+</div>
+
+<script src="{% static 'js/home.js' %}"></script>
+</body>
+
+</html>

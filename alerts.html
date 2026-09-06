@@ -1,0 +1,44 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>AI Weather Alerts</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+<div class="container">
+    <h1>🚨 AI Weather Alerts</h1>
+    <p class="subtitle">Smart alerts generated for your farm</p>
+
+    <div id="alerts">
+        <p class="loading-text">🤖 AI is analyzing weather data...</p>
+    </div>
+    <br>
+    <a href="/" class="open-btn">← Back to Dashboard</a>
+</div>
+
+<script>
+function getCookie(name){
+    let cookieValue=null;
+    if(document.cookie && document.cookie !== ""){
+        const cookies=document.cookie.split(";");
+        for(let cookie of cookies){
+            cookie=cookie.trim();
+            if(cookie.startsWith(name+"=")){
+                cookieValue=decodeURIComponent(cookie.substring(name.length+1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+</script>
+
+<script src="{% static 'js/alerts.js' %}"></script>
+
+</body>
+
+</html>

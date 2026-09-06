@@ -1,0 +1,45 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>10-Day Forecast</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+<div class="container">
+    <h1>📅 10-Day Weather Forecast</h1>
+    <p class="subtitle">Weather prediction for your farm</p>
+
+    <div id="forecast" class="forecast-container">
+        <p class="loading-text">⏳ Loading 10-Day Forecast...</p>
+    </div>
+    <br>
+    <a href="/" class="open-btn">← Back to Dashboard</a>
+
+</div>
+
+<script>
+function getCookie(name){
+    let cookieValue=null;
+    if(document.cookie && document.cookie !== ""){
+        const cookies=document.cookie.split(";");
+        for(let cookie of cookies){
+            cookie=cookie.trim();
+            if(cookie.startsWith(name+"=")){
+                cookieValue=decodeURIComponent(cookie.substring(name.length+1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+</script>
+
+<script src="{% static 'js/forecast.js' %}"></script>
+
+</body>
+
+</html>

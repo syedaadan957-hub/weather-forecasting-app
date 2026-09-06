@@ -1,0 +1,40 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Farming Suggestions</title>
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+<div class="container">
+    <h1>🌱 AI Farming Suggestions</h1>
+    <p class="subtitle">Select your crop to receive AI-powered recommendations.</p>
+    <div class="crop-selection">
+        <select id="crop">
+            <option value="Wheat">🌾 Wheat</option>
+            <option value="Rice">🌾 Rice</option>
+            <option value="Maize">🌽 Maize</option>
+            <option value="Cotton">🌱 Cotton</option>
+            <option value="Tomato">🍅 Tomato</option>
+            <option value="Potato">🥔 Potato</option>
+            <option value="Mango">🥭 Mango</option>
+        </select>
+        <button id="getSuggestions" class="open-btn">Get AI Suggestions</button>
+    </div>
+    <div id="status"></div>
+    <br>
+    <a href="/" class="open-btn">⬅ Back to Dashboard</a>
+</div>
+
+<script src="{% static 'js/farming.js' %}"></script>
+
+</body>
+
+</html>
